@@ -1,16 +1,16 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SongsService } from './songs/songs.service';
-import { SongsController } from './songs/songs.controller';
-import { SongsModule } from './songs/songs.module';
 import { LoggingService } from './service/logging.service';
 import { TransientService } from './service/transient.service';
 import { RequestScopeService } from './service/request-scope.service';
+import { ChatGateway } from './chat/chat-gatway';
 
 @Module({
-  imports: [SongsModule],
-  controllers: [AppController, SongsController],
-  providers: [AppService, SongsService,LoggingService,TransientService,RequestScopeService],
+  imports: [],
+  controllers: [AppController],
+  providers: [AppService,LoggingService,TransientService,RequestScopeService,ChatGateway
+  
+  ],
 })
 export class AppModule {}
